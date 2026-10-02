@@ -1,10 +1,11 @@
 export class ValidadorUtil {
 
     verificarCPF(cpf){
-        if (typeof cpf !== 'string'){
+        let valor = cpf.replace(/\D/g, '');
+        if (typeof valor !== 'string'){
             throw new Error("ERR_TIPO_INVALIDO");
         }
-        if (cpf.length !== 11){
+        if (valor.length !== 11){
             throw new Error("ERR_CPF_INVALIDO");
         }
         return;
